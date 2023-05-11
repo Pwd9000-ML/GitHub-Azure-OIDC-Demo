@@ -1,9 +1,9 @@
 ### Create-SP-OIDC.ps1 ###
 # Log into Azure
-Az login --use-device-code
+az login --use-device-code
 
 # Show current subscription (use 'Az account set' to change subscription)
-Az account show
+az account show
 
 # variables
 $subscriptionId = $(az account show --query id -o tsv)

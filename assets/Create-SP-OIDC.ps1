@@ -7,17 +7,18 @@ Az account show
 
 # variables
 $subscriptionId = $(az account show --query id -o tsv)
-$appName = "GitHub-projectName-Actions-OIDC"
+$appName = "GitHub-GlobalAzure-Actions-OIDC"
 $RBACRole = "Contributor"
 
 $githubOrgName = "Pwd9000-ML"
-$githubRepoName = "RandomStuff"
+$githubRepoName = "Global-Azure-2023-OIDC-Demo"
 $githubBranch = "master"
 
 # Create AAD App and Principal
 $appId = $(az ad app create --display-name $appName --query appId -o tsv)
 az ad sp create --id $appId
 
+#Ref entity types: https://learn.microsoft.com/en-us/azure/active-directory/workload-identities/workload-identity-federation-create-trust?pivots=identity-wif-apps-methods-azcli#github-actions-example
 # Create federated GitHub credentials (Entity type 'Branch')
 $githubBranchConfig = [PSCustomObject]@{
     name        = "GH-[$githubOrgName-$githubRepoName]-Branch-[$githubBranch]"

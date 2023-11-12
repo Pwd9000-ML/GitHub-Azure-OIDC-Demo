@@ -8,11 +8,11 @@ az account show
 
 # variables
 $subscriptionId = $(az account show --query id -o tsv)
-$appName = "GitHub-GlobalAzure-Actions-OIDC"
+$appName = "GitHub-Azure-Actions-OIDC"
 $RBACRole = "Contributor"
 
 $githubOrgName = "Pwd9000-ML"
-$githubRepoName = "Global-Azure-2023-OIDC-Demo"
+$githubRepoName = "GitHub-Azure-OIDC-Demo"
 $githubBranch = "master"
 
 # Create AAD App and Principal

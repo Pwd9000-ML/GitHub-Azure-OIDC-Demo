@@ -10,7 +10,7 @@ permissions:
       contents: read
 
 jobs: 
-  publish:
+  login_azure_oidc:
     runs-on: ubuntu-latest
     steps:
       - name: 'Az CLI login using OIDC'

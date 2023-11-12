@@ -1,6 +1,6 @@
 ### Create-SP-OIDC.ps1 ###
 # Log into Azure
-az login --use-device-code
+az login --tenant 'b4fd7cff-510b-4da5-b133-f7aa6f692ee2'--use-device-code
 
 # Show current subscription (use 'Az account set' to change subscription)
 az account show
